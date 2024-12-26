@@ -5,7 +5,7 @@ import 'package:pocketbase/pocketbase.dart';
 class AuthController extends GetxController {
   final PBService pb = Get.find();
 
-  var userAuth = RecordAuth().obs;
+  var userAuth = RecordModel().obs;
 
   Future<void> signInWithUsernameAndPassword(
       String email, String password) async {
@@ -30,6 +30,14 @@ class AuthController extends GetxController {
         e.toString(),
         snackPosition: SnackPosition.BOTTOM,
       );
+    }
+  }
+
+  @override
+  void onInit() {
+    var userData = pb.getCurrentUser();
+    if (userData != null) {
+      userData = pb.getCurrentUser();
     }
   }
 }

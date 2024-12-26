@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:note_taker/auth_controller.dart';
+import 'package:note_taker/controllers/auth_controller.dart';
 
 class LoginView extends StatefulWidget {
   @override

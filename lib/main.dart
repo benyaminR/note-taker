@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_taker/add_note_view.dart';
 import 'package:note_taker/auth_binding.dart';
-import 'package:note_taker/auth_controller.dart';
+import 'package:note_taker/controllers/auth_controller.dart';
 import 'package:note_taker/home_view.dart';
 import 'package:note_taker/login_view.dart';
 import 'package:note_taker/services/pb_service.dart';
@@ -33,7 +33,7 @@ class Root extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() =>
-        controller.userAuth.value.token.isNotEmpty ? HomeView() : LoginView());
+        controller.userAuth.value.id.isNotEmpty ? HomeView() : LoginView());
   }
 }
 
@@ -43,6 +43,6 @@ class AppRoutes {
       name: Root.routeName,
       page: () => Root(),
     ),
-    GetPage(name: AddNoteView.routeName, page: () => const AddNoteView()),
+    GetPage(name: AddNoteView.routeName, page: () => AddNoteView()),
   ];
 }
