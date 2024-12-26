@@ -6,7 +6,7 @@ class AddNoteView extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
   final AddNoteController addNoteController = Get.put(AddNoteController());
   AddNoteView({Key? key}) : super(key: key);
-  static const String routeName = '/addnote';
+  static const String routeName = '/addNote';
   @override
   Widget build(BuildContext context) {
     return PopScope(

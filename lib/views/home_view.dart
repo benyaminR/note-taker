@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:get/get.dart';
-import 'package:note_taker/add_note_view.dart';
+import 'package:note_taker/views/add_note_view.dart';
 import 'package:note_taker/controllers/home_controller.dart';
+import 'package:note_taker/views/view_note_view.dart';
 
 class HomeView extends StatelessWidget {
   var homeController = Get.put(HomeController());
@@ -24,6 +25,11 @@ class HomeView extends StatelessWidget {
           : ListView.builder(
               itemBuilder: (context, index) {
                 return GestureDetector(
+                  onTap: () async {
+                    await Get.toNamed(ViewNoteView.routeName,
+                        arguments: homeController.notes[index]);
+                    await homeController.fetchNotes();
+                  },
                   onLongPress: () {
                     Get.defaultDialog(
                         title: "Warning",

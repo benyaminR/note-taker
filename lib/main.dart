@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:note_taker/add_note_view.dart';
-import 'package:note_taker/auth_binding.dart';
+import 'package:note_taker/views/add_note_view.dart';
+import 'package:note_taker/views/auth_binding.dart';
 import 'package:note_taker/controllers/auth_controller.dart';
-import 'package:note_taker/home_view.dart';
-import 'package:note_taker/login_view.dart';
 import 'package:note_taker/services/pb_service.dart';
+import 'package:note_taker/views/home_view.dart';
+import 'package:note_taker/views/login_view.dart';
+import 'package:note_taker/views/view_note_view.dart';
 
 void main() async {
   await initDependencies();
@@ -44,5 +45,6 @@ class AppRoutes {
       page: () => Root(),
     ),
     GetPage(name: AddNoteView.routeName, page: () => AddNoteView()),
+    GetPage(name: ViewNoteView.routeName, page: () => ViewNoteView())
   ];
 }
