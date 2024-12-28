@@ -2,6 +2,11 @@
 
 A minimalist note-taking application built with Flutter and PocketBase.
 
+
+https://github.com/user-attachments/assets/0bc0061a-fe34-48db-8245-0e93bad2af78
+
+
+
 ## Features
 
 - Create and manage personal notes
